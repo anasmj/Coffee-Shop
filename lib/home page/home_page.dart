@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:order_coffee/home%20page/home%20page%20widgets/custom_bottom_navigatin_bar.dart';
 import 'package:order_coffee/home%20page/home%20page%20widgets/item''_card.dart';
 import 'home page widgets/custome_search_field.dart';
 import 'home page widgets/toggle_drink.dart';
+
 
 class HomePage extends StatelessWidget {
   List<ItemCard> coffeeList = [
@@ -16,6 +18,8 @@ class HomePage extends StatelessWidget {
   ];
 
   final double sideSpacing = 16.0;
+
+  HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -42,6 +46,12 @@ class HomePage extends StatelessWidget {
             color: Colors.black,
           ),
         ),
+      ),
+      extendBody: true,
+      bottomNavigationBar:
+      const Padding(
+        padding: EdgeInsets.all(18.0),
+        child: CustomBottomNavigationBar(),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: sideSpacing),
