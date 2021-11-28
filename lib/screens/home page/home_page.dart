@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:order_coffee/home%20page/home%20page%20widgets/custom_bottom_navigatin_bar.dart';
-import 'package:order_coffee/home%20page/home%20page%20widgets/item''_card.dart';
+import 'home page widgets/custom_bottom_navigatin_bar.dart';
 import 'home page widgets/custome_search_field.dart';
+import 'home page widgets/item_card.dart';
 import 'home page widgets/toggle_drink.dart';
 
 

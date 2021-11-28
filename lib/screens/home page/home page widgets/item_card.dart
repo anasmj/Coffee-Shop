@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:order_coffee/consts.dart';
+import 'package:order_coffee/screens/consts.dart';
 
 import 'add_button.dart';
 import 'coffee_name.dart';
