@@ -33,9 +33,12 @@ class HomePage extends StatelessWidget {
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: sideSpacing),
-            child: const Icon(
-              Icons.shopping_cart,
-              color: Colors.black,
+            child: GestureDetector(
+              onTap: ()=> Navigator.pushNamed(context, '/coffee_details'),
+              child: const Icon(
+                Icons.shopping_cart,
+                color: Colors.black,
+              ),
             ),
           ),
         ],
