@@ -8,8 +8,3 @@
 
 
 
-
-
-
-https://user-images.githubusercontent.com/48752942/144018136-563a1f7c-38d1-4a8e-98e3-dc6f295ba5b4.mp4
-
