@@ -1,4 +1,7 @@
 # Coffe shop (UI) 
 
 
-![1](https://user-images.githubusercontent.com/48752942/144015034-bed5a825-dde9-4700-8fe9-2adb9909a70d.jpg)  ![2](https://user-images.githubusercontent.com/48752942/144015062-35e78c17-bd92-4bef-bdb3-255b3d96acd3.jpg)
+
+![1](https://user-images.githubusercontent.com/48752942/144015206-2152fafc-52a9-4617-b002-0b75b2f4640e.jpg)   ![2](https://user-images.githubusercontent.com/48752942/144015230-937545dd-6723-4286-935c-cfb074afacdc.jpg)
+
+ 
