@@ -15,7 +15,8 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: ()=> Navigator.pushNamed(context, '/coffee_details'),
+      onTap: ()=> Navigator.pushNamed(context, '/coffee_details', arguments: coffee),
+
       child: Container(
         child: Stack(
           children: [

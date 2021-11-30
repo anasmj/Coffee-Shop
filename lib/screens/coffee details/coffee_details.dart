@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:order_coffee/models/coffee.dart';
 import 'package:order_coffee/screens/coffee%20details/coffe%20details%20page%20widget/toggle_coffee_size.dart';
 import 'package:order_coffee/screens/coffee%20details/coffe%20details%20page%20widget/toggle_quantity.dart';
 
@@ -14,6 +15,8 @@ class CoffeeDetails extends StatelessWidget {
   late double imageWidth ;
   @override
   Widget build(BuildContext context) {
+    Coffee? coffee = ModalRoute.of(context)!.settings.arguments as Coffee?;
+
     double screenWidth = MediaQuery.of(context).size.width;
     imageWidth = screenWidth*.9;
 
@@ -35,21 +38,21 @@ class CoffeeDetails extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: SIDE_SPACING),
         child: ListView(
           children:  [
-            const Text(
-              'Lattee',
-              style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
+             Text(
+              coffee!.coffeeName,
+              style: const TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
             ),
             coffeeDescription(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: getCoffeeImage(),
+              child: getCoffeeImage(coffee.imageName),
             ),
             getTitle('Size'),
             ToggleCoffeeSize(),
             getTitle('Quantity'),
             const ToggleQuantity(),
             const Text('Price', style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),),
-            const Text('IDR 70.0', style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
+            Text(coffee.price.toString(), style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
 
           ],
         ),
@@ -57,7 +60,7 @@ class CoffeeDetails extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orangeAccent,
-        child: Icon(Icons.shopping_basket_rounded),
+        child: const Icon(Icons.shopping_basket_rounded),
         onPressed: (){},
       ),
     );
@@ -70,11 +73,12 @@ class CoffeeDetails extends StatelessWidget {
     ),
   );
   
-  Widget getCoffeeImage (){
+  Widget getCoffeeImage (String imageName){
     return  Container(
       decoration: BoxDecoration(
-        image: const DecorationImage(
-          image: AssetImage('assets/coffee_images/c2.jpg'),
+        image: DecorationImage(
+          //image: AssetImage('assets/coffee_images/c2.jpg'),
+          image: AssetImage('assets/coffee_images/$imageName'),
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(20),

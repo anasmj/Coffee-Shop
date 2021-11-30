@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:order_coffee/models/coffee.dart';
 
 import '../../consts.dart';
 
