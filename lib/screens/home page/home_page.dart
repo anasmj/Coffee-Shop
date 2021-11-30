@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:order_coffee/models/coffee.dart';
 import 'home page widgets/custom_bottom_navigatin_bar.dart';
 import 'home page widgets/custome_search_field.dart';
 import 'home page widgets/item_card.dart';
@@ -7,18 +8,19 @@ import 'home page widgets/toggle_drink.dart';
 
 class HomePage extends StatelessWidget {
   List<ItemCard> coffeeList = [
-    ItemCard(),
-    ItemCard(),
-    ItemCard(),
-    ItemCard(),
-    ItemCard(),
-    ItemCard(),
-    ItemCard(),
-    ItemCard(),
+    ItemCard(coffee: Coffee(price: 49.0, coffeeName: 'Expresso', imageName: 'c1.jpg')),
+    ItemCard(coffee: Coffee(price: 55.0, coffeeName: 'Doppio', imageName: 'c2.jpg')),
+    ItemCard(coffee: Coffee(price: 86.0, coffeeName: 'Americano', imageName: 'c3.jpg')),
+    ItemCard(coffee: Coffee(price: 65.0, coffeeName: 'Cappucchino', imageName: 'c4.jpg')),
+    ItemCard(coffee: Coffee(price: 47.0, coffeeName: 'Latte', imageName: 'c5.jfif')),
+    ItemCard(coffee: Coffee(price: 55.0, coffeeName: 'Mocha', imageName: 'c6.jfif')),
+    ItemCard(coffee: Coffee(price: 89.0, coffeeName: 'Cortado', imageName: 'c7.jpg')),
+    ItemCard(coffee: Coffee(price: 75.0, coffeeName: 'Macchiato', imageName: 'c8.jfif')),
+    ItemCard(coffee: Coffee(price: 48.0, coffeeName: 'Afgato', imageName: 'c9.jpg')),
+    ItemCard(coffee: Coffee(price: 59.0, coffeeName: 'Irish Coffee', imageName: 'c10.jpg')),
   ];
 
   final double sideSpacing = 16.0;
-
   HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -33,13 +35,10 @@ class HomePage extends StatelessWidget {
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: sideSpacing),
-            child: GestureDetector(
-              onTap: ()=> Navigator.pushNamed(context, '/coffee_details'),
-              child: const Icon(
+            child: const Icon(
                 Icons.shopping_cart,
                 color: Colors.black,
               ),
-            ),
           ),
         ],
         leading: Padding(
@@ -89,7 +88,7 @@ class HomePage extends StatelessWidget {
         crossAxisSpacing: 18.0,
         childAspectRatio: cardRatio,
       ),
-      itemCount: 8,
+      itemCount: coffeeList.length,
       itemBuilder: (context, index) => coffeeList[index],
     );
   }

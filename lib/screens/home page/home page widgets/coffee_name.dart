@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 import '../../consts.dart';
 
 class CoffeeName extends StatelessWidget {
+  final String name;
+  final double price;
   const CoffeeName({
     Key? key,
     required this.screenSize,
+    required this.name,
+    required this.price
   }) : super(key: key);
 
   final Size screenSize;
@@ -18,14 +22,14 @@ class CoffeeName extends StatelessWidget {
         child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
-                  'Short Moacchiato',
-                  style: TextStyle(color: Colors.white),
+                  name,
+                  style: const TextStyle(color: Colors.white),
                 ),
-                Text('IDR 49.99',
-                  style: TextStyle(
+                Text(
+                  price.toString(),
+                  style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
@@ -41,7 +45,7 @@ class CoffeeName extends StatelessWidget {
         color: priceTagColor,
       ),
       width: screenSize.height*45,
-      height: screenSize.height*.10,
+      height: screenSize.height*.08,
     );
   }
 }
